@@ -13,3 +13,15 @@ You can use the following command to build your project with Lext:
 ```bash
 npx create-lext-app MyLextProject
 ```
+
+### Demo App
+
+```bash
+git clone git@github.com:yunus-acar/lext-demo.git
+```
+
+[Core Repo](https://github.com/ynssenem/lext)
+
+[NPM](https://www.npmjs.com/package/@ynssenem/lext)
+
+Lext ❤️ React Native
