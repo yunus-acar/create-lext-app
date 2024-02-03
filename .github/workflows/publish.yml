@@ -1,0 +1,25 @@
+name: Publish Package
+
+on:
+  release:
+    types: [released]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Publish to NPM from master
+        run: npm dist-tag add create-lext-app@$(node -p "require('./package.json').version") latest
+        working-directory: .
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
